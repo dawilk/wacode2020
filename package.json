@@ -1,0 +1,23 @@
+{
+  "name": "wacode2020",
+  "version": "1.0.0",
+  "description": "Web app to compare appliances",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawilk/wacode2020.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dawilk/wacode2020/issues"
+  },
+  "homepage": "https://github.com/dawilk/wacode2020#readme",
+  "dependencies": {
+    "log-timestamp": "^0.3.0"
+  }
+}
