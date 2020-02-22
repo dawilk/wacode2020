@@ -51,7 +51,7 @@ const main = () => {
   // load the database
   loadDatabase();
   // initialize webapp
-  startWebApp();
+  // startWebApp();
   // wait for events
 
 };
