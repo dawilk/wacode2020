@@ -1,4 +1,4 @@
-{
+[
     {
         "model":"WT7600HWA",
         "brand":"LG Electronics Inc.",
@@ -26,5 +26,4 @@
         "dimensions":["27.25","43.5","27.875","58.5"],
         "weight":""
     }
-}
-        
+]
