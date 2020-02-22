@@ -46,7 +46,24 @@ const main = () => {
   // load the database
   loadDatabase();
   // initialize webapp
-  // startWebApp();
+  var express = require('express'),
+      app = express(),
+      bodyParser = require('body-parser'),
+      port = config.port || 9000;
+
+  app.use(bodyParser());
+
+  // as only one page can use res.sendfile to render the page which will contain the drop   downs
+  app.get('/', function (req, res) {
+      res.sendfile('views/index2.html');
+  });
+
+  app.get('/compare', function (req, res) {
+      // If it's not showing up, just use req.body to see what is actually being passed.
+      console.log(req.body.selectpicker);
+  });
+
+  app.listen(port);
   // wait for events
 
 };
