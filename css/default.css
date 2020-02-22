@@ -1,0 +1,136 @@
+body {
+    background: #aaccff URL('/resources/bg.jpg');
+    font-family: Courier, Courier New, monospace;
+    font-size: 0.875em;
+}
+
+table.main {
+    width: 100%;
+    background: #ddddff URL('/resources/table.jpg') no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    margin: 2% 0% 0% 0%;
+}
+
+table.banner {
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #ddddff;
+    background-size: cover;
+    text-align: center;
+    font-weight: bold;
+    padding: 1% 0% 1% 0%;
+}
+
+.footer {
+    background-color: #ddddff;
+    text-align: center;
+    font-size: 0.75em;
+    padding: 0.5% 0% 0.5% 0%;
+}
+
+.button-menu {
+    background-color: #ddddff;
+    padding: 2px 0px 2px 0px;
+    height: 52px;
+}
+
+button {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 2px 8px 2px 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.0em;
+    font-weight: bold;
+    margin: 0px 2px;
+    -webkit-transition-duration: 0.2s;
+    -webkit-appearance: none;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+button.login {
+    background-color: #ddddff;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    position: relative;
+    font-size: 0.75em;
+}
+
+button.login:hover {
+    background-color: #444444;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1em;
+}
+
+a.buttons {
+    background-color: #444444;
+    border: none;
+    border-radius: none;
+    color: #ddddff;
+    padding: 2px 8px 2px 8px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.0em;
+    font-weight: bold;
+    padding: 16px 32px 16px 32px;
+    margin: 0px 0.5px;
+    -webkit-transition-duration: 0.2s;
+    -webkit-appearance: none;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+a.buttons:hover {
+    background-color: #ddddff;
+    color: #444444;
+}
+
+span {
+    background-color: #ddddff;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    padding: 2px 8px 2px 8px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.0em;
+    -webkit-appearance: none;
+}
+
+span.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    position: absolute;
+    left: 16px;
+    top: -12px;
+}
+
+p.body {
+    background-color: #ddddff;
+    border: 1px solid black;
+    border-radius: 3px;
+    color: black;
+    padding: 32px 16px 32px 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    font-size: 1.0em;
+    -webkit-appearance: none;
+}
+
+td.info {
+    text-align: left;
+}
