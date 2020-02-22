@@ -3,7 +3,7 @@
         "model":"WT7600HWA",
         "brand":"LG Electronics Inc.",
         "capacity":"5.2 cubic feet",
-        "annual usage":"130 kWh",
+        "usage":"130 kWh",
         "price":"1149.99",
         "dimensions":["27","44.5","28.375","57.5"],
         "weight":"146.9"
@@ -25,5 +25,176 @@
         "price":"1099.00",
         "dimensions":["27.25","43.5","27.875","58.5"],
         "weight":""
+    },
+    {
+        "model":"WA54R7200AW",
+        "brand":"Samsung Group",
+        "capacity":"5.4 cubic feet",
+        "usage":"120 kWh",
+        "price":"699.00",
+        "dimensions":["27.5","44.6","29.4","58.3"],
+        "weight":"132"
+    },
+    {
+        "model":"WT7300CV",
+        "brand":"LG Electronics Inc.",
+        "capacity":"5.0 cubic feet",
+        "usage":"110 kWh",
+        "price":"832.99",
+        "dimensions":["27.0","44.5","28.375","57.25"],
+        "weight":"146.9"
+    },
+    {
+        "model":"WTW5000DW",
+        "brand":"Whirlpool Corporation",
+        "capacity":"4.3 cubic feet",
+        "usage":"179 kWh",
+        "price":"749.00",
+        "dimensions":["27.5","42.25","28.0","57.5"],
+        "weight":""
+    },
+    {
+        "model":"WA54M8750AVA4",
+        "brand":"Samsung Group",
+        "capacity":"5.4 cubic feet",
+        "usage":"165 kWh",
+        "price":"1169.99",
+        "dimensions":["27.0","42.438","29.3","61.0"],
+        "weight":"136.7"
+    },
+    {
+        "model":"GTW840CPNDG",
+        "brand":"GE Appliances",
+        "capacity":"5.2 cubic feet",
+        "usage":"175 kWh",
+        "price":"1049.00",
+        "dimensions":["27.0","48.0","27.0","58.0"],
+        "weight":"162"
+    },
+    {
+        "model":"GTW720BPNDG",
+        "brand":"GE Appliances",
+        "capacity":"4.8 cubic feet",
+        "usage":"165 kWh",
+        "price":"949.00",
+        "dimensions":["27.0","46.0","27.0","56.0"],
+        "weight":"147"
+    },
+    {
+        "model":"GTW685BSLWS",
+        "brand":"GE Appliances",
+        "capacity":"4.5 cubic feet",
+        "usage":"150 kWh",
+        "price":"849.99",
+        "dimensions":["27.0","46.0","27.0","56.0"],
+        "weight":"147"
+    },
+    {
+        "model":"WT7100CW",
+        "brand":"LG Electronics Inc.",
+        "capacity":"4.5 cubic feet",
+        "usage":"220 kWh",
+        "price":"699.00",
+        "dimensions":["27.0","44.5","28.3","57.2"],
+        "weight":"134.5"
+    },
+    {
+        "model":"WT7060CV",
+        "brand":"LG Electronics Inc.",
+        "capacity":"4.5 cubic feet",
+        "usage":"220 kWh",
+        "price":"849.99",
+        "dimensions":["27.0","44.5","28.375","57.2"],
+        "weight":"134.5"
+    },
+    {
+        "model":"WF42H5000AWA2",
+        "brand":"Samsung Group",
+        "capacity":"4.2 cubic feet",
+        "usage":"85 kWh",
+        "price":"599.00",
+        "dimensions":["27.0","38.75","33.0",""],
+        "weight":"192"
+    },
+    {
+        "model":"DVE45R6100WA3",
+        "brand":"Samsung Group",
+        "capacity":"7.5 cubic feet",
+        "usage":"644 kWh",
+        "price":"649.00",
+        "dimensions":["27.0","38.7","31.5",""],
+        "weight":"123"
+    },
+    {
+        "model":"WV55M9600AVA5",
+        "brand":"Samsung Group",
+        "capacity":"5.5 cubic feet",
+        "usage":"105 kWh",
+        "price":"1299.00",
+        "dimensions":["27.0","46.9","34.0",""],
+        "weight":"293"
+    },
+    {
+        "model":"EFLS627UTT",
+        "brand":"Electrolux Appliances",
+        "capacity":"4.4 cubic feet",
+        "usage":"85 kWh",
+        "price":"1399.00",
+        "dimensions":["27.0","38.0","31.5","53.5"],
+        "weight":"235"
+    },
+    {
+        "model":"EFLW317TIW",
+        "brand":"Electrolux Appliances",
+        "capacity":"4.3 cubic feet",
+        "usage":"60 kWh",
+        "price":"999.00",
+        "dimensions":["27.0","38.0","32","53.5"],
+        "weight":"185"
+    },
+    {
+        "model":"EFLS210TIS",
+        "brand":"Electrolux Appliances",
+        "capacity":"2.4 cubic feet",
+        "usage":"90 kWh",
+        "price":"1249.00",
+        "dimensions":["23.625","33.5","34.0","42.0"],
+        "weight":"235"
+    },
+    {
+        "model":"TR5000WN",
+        "brand":"Speed Queen",
+        "capacity":"3.2 cubic feet",
+        "usage":"64 kWh",
+        "price":"999.00",
+        "dimensions":["25.625","42.75","28.0","53.0"],
+        "weight":"195"
+    },
+    {
+        "model":"MVWB835DW",
+        "brand":"Maytag Corporation",
+        "capacity":"5.3 cubic feet",
+        "usage":"187 kWh",
+        "price":"650.00",
+        "dimensions":["27.5","43.0","28.0","59.0"],
+        "weight":"165"
+    },
+    {
+        "model":"MVWB765FC",
+        "brand":"Maytag Corporation",
+        "capacity":"4.7 cubic feet",
+        "usage":"356 kWh",
+        "price":"617.00",
+        "dimensions":["27.5","42.0","27.0","61.0"],
+        "weight":"159"
+    },
+    {
+        "model":"WM3700HVA",
+        "brand":"LG Electronics Inc.",
+        "capacity":"4.5 cubic feet",
+        "usage":"105 kWh",
+        "price":"888.99",
+        "dimensions":["27.0","39.0","30.25","55.0"],
+        "weight":"187"
     }
 ]
