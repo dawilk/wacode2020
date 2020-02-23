@@ -70,9 +70,6 @@ const main = () => {
   app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/view/index.html'));
   });
-  app.get('/index2', function (req, res) {
-      res.sendFile(path.join(__dirname + '/view/index2.html'));
-  });
 
   app.post('/populateModels', HomeController.getWashers);
   app.post('/getModel', HomeController.getWasher);
