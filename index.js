@@ -9,6 +9,7 @@ require('log-timestamp');
 console.log('Initializing...');
 
 const fs = require('fs');
+const path = require('path');
 const config = require('./config.json');
 let data;
 
@@ -40,23 +41,41 @@ const loadDatabase = () => {
   console.log(data[0].model);
 };
 
+var mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+// mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://daniel:avtFaLobACqcsNQJ@cluster0-nqmgi.mongodb.net/appliances", {useNewUrlParser: true});
 
+mongoose.connection.on('error', function(err) {
+  console.log('MongoDB Connection Error. Please make sure that MongoDB is running.'+err);
+     process.exit(1);
+  });
 
 const main = () => {
   // load the database
-  loadDatabase();
+  // loadDatabase();
   // initialize webapp
   var express = require('express'),
       app = express(),
       bodyParser = require('body-parser'),
       port = config.port || 9000;
 
-  app.use(bodyParser());
+  // app.use(bodyParser());
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+
+  var HomeController = require('./controller/home');
 
   // as only one page can use res.sendfile to render the page which will contain the drop   downs
   app.get('/', function (req, res) {
-      res.sendfile('./views/index2.html');
+    res.sendFile(path.join(__dirname + '/view/index.html'));
   });
+  app.get('/index2', function (req, res) {
+      res.sendFile(path.join(__dirname + '/view/index2.html'));
+  });
+
+  app.post('/populateModels', HomeController.getWashers);
+  app.post('/getModel', HomeController.getWasher);
 
   app.get('/compare', function (req, res) {
       // If it's not showing up, just use req.body to see what is actually being passed.

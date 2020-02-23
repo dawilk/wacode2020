@@ -1,0 +1,209 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Washer Comparison</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+    </style>
+</head>
+
+<body class="bg-info">
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Washer Inventory</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="InvDataTable">
+            <table id="InvTable" class="table table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Usage</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Usage</th>
+                        <th>Price</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Washer Comparison</h2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="CompDataTable">
+            <table id="CompTable" class="table table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th>Picker</th>
+                        <th>Current Model</th>
+                        <th>Suggestion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select id="dropdown" onchange="showCurrent()" class='form-control'>
+                                <option>WT7600HWA</option>
+                                <option>GTW840CSNWS</option>
+                                <option>WTW8120HW</option>
+                                <option>WA54R7200AW</option>
+                                <option>WT7300CV</option>
+                                <option>WTW5000DW</option>
+                                <option>WA54M8750AVA4</option>
+                                <option>GTW840CPNDG</option>
+                                <option>GTW720BPNDG</option>
+                                <option>GTW685BSLWS</option>
+                                <option>WT7100CW</option>
+                                <option>WT7060CV</option>
+                                <option>WF42H5000AWA2</option>
+                                <option>DVE45R6100WA3</option>
+                                <option>WV55M9600AVA5</option>
+                                <option>EFLS627UTT</option>
+                                <option>EFLW317TIW</option>
+                                <option>EFLS210TIS</option>
+                                <option>TR5000WN</option>
+                                <option>MVWB835DW</option>
+                                <option>MVWB765FC</option>
+                                <option>WM3700HVA</option>                                    
+                            </select>
+                        </td>
+                        <td>
+                            
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</body>
+<script>
+
+    //$.fn.poshytip = { defaults: null };
+    //$.fn.editable.defaults.mode = 'inline';
+    $(document).ready(function () {
+        var t = $('#InvTable').DataTable({
+            "paging": true,
+            "pageLength": 10,
+            "processing": true,
+            "serverSide": true,
+            'ajax': {
+                'type': 'POST',
+                'url': '/populateModels'
+            },
+            'columns':
+                [
+                    { 'data': 'brand', "defaultContent": "", 'name': 'Brand' },
+                    { 'data': 'model', "defaultContent": "", 'name': 'Model' },
+                    { 'data': 'usage', "defaultContent": "", 'name': 'Usage' },
+                    { 'data': 'price', "defaultContent": "", 'name': 'Price' }
+                ],
+            "columnDefs": [
+                {
+                    "searchable": false,
+                    "orderable": false,
+                    "targets": 0
+                }
+            ]
+
+        });
+
+        /* t.on('draw', function () {
+             //setting the next and prev buttons with active or disabled state
+ 
+             //setting the index column with values.
+             t.column(0, { search: 'applied', order: 'applied' }).nodes().each(
+                 function (cell, i) {
+                     cell.innerHTML = i + 1;
+                 }
+             );
+         });
+         */
+        //paging
+        /* $('#next').on('click', function () {
+             t.page('next').draw('page');
+         });
+ 
+         $('#previous').on('click', function () {
+             t.page('previous').draw('page');
+         });
+     */
+        //$('#InvTable').DataTable();
+    });
+
+    //populate the Drop Down List
+    // not quite working. using static list above instead
+    // $(document).ready(function () {
+    //     $.getJSON("/populateModels", function (data) {
+    //         $.each(data, function (index, item) {
+    //             $('#dropdown').append(
+    //                 $('<option></option>').val(item.model).html(item.model)
+    //             );
+    //         });
+    //     });
+    // });
+    $(document).ready(function(){
+        $("#dropdown").on('change', function postinput(){
+            var selection = $(this).val(); // this.value
+            $.ajax({ 
+                url: '/getModel', // call the db for the selected model
+                data: { value: selection },
+                type: 'post',
+                success:(result,status,xhr) => {
+                    console.log('Success: ', result);
+                }
+            }).done(function(responseData) {
+                console.log('Done: ', responseData);
+            }).fail(function() {
+                console.log('Failed');
+            });
+        });
+    }); 
+
+    function showCurrent() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("dropdown");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        };
+</script>
+
+</html>
