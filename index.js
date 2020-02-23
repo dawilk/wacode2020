@@ -44,7 +44,7 @@ const loadDatabase = () => {
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
+mongoose.connect(process.env.DB_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 mongoose.connection.on('error', function(err) {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.'+err);
@@ -81,6 +81,7 @@ const main = () => {
 
   app.listen(port);
   // wait for events
+  console.log('App listening on port ' + port);
 
 };
 
