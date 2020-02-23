@@ -4,6 +4,7 @@
 * @desc Compares appliances
 */
 
+require('dotenv').config()
 require('log-timestamp');
 
 console.log('Initializing...');
@@ -43,8 +44,7 @@ const loadDatabase = () => {
 
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-// mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
-mongoose.connect("mongodb+srv://daniel:avtFaLobACqcsNQJ@cluster0-nqmgi.mongodb.net/appliances", {useNewUrlParser: true});
+mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
 
 mongoose.connection.on('error', function(err) {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.'+err);
